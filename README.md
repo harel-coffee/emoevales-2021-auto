@@ -6,4 +6,20 @@ Emotion Analysis extends the idea of Sentiment Analysis by shifting from plain p
 
 
 ## Details
-The source code is stored in the ```code``` folder. In the ```embeddings```folders there are symbolyc links to the pretrained word embeddings used. Due to size, you should download the ```glove.6b.300d.txt``` (https://nlp.stanford.edu/projects/glove/). The ```train```, ```dev```, and ```test``` splits are stored in the ```datasets``` folder. In the ```assets``` folders there are the features employed, the runs sent, and the hyperparameters results but not the models due to their filesize. You need to train the models or you can request me by email <joseantonio.garcia8@um.es>
+The source code is stored in the ```code``` folder. For training, the ```embeddings```folders there are symbolyc links to the pretrained word embeddings used. Due to size, however, you should download the ```glove.6b.300d.txt``` (https://nlp.stanford.edu/projects/glove/). The dataset is not submitted and you should download from codalab. If you need the trained model and feature sets you can request them by email <joseantonio.garcia8@um.es>.
+
+
+## Install
+1. Create a virtual environment in Python 3
+2. Install the dependencies that are stored at requirements.txt
+3. Create the folder ```assets/emoeval/2021-es```
+4. Copy the datasets at ```assets/emoeval/2021-es/dataset``` folder
+5. Generate the dataset: ```python -W ignore compile.py --dataset=emoeval --corpus=2021-es```
+6. Finetune BERT. ```python -W ignore train.py --dataset=emoeval --corpus=2021-es --model=transformers```
+7. Feature selection. ```python -W ignore feature-selection.py --dataset=emoeval --corpus=2021-es```
+8. Generate BF features: ```python -W ignore generate-bf.py --dataset=emoeval --corpus=2021-es```
+9. Feature selection for the BF features. ```python -W ignore feature-selection.py --dataset=emoeval --corpus=2021-es```
+10. Train. ```python -W ignore train.py --dataset=emoeval --corpus=2021-es --model=deep-learning --features=lf```
+11. Evaluate. ```python -W ignore evaluate.py --dataset=emoeval --corpus=2021-es --model=deep-learning --features=lf --source=val```
+
+
