@@ -1,0 +1,9 @@
+{
+    "emoeval": {
+        "2021-es": {
+            "datasetClass": "DatasetEMOEval",
+            "scoring": "val_f1_score",
+            "f1_score_scheme": "weighted"
+        }
+    }
+}
