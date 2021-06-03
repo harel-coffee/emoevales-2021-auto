@@ -1,1 +1,9 @@
-# emoevales-2021
+# UMUTeam at EmoEvalEs 2021: Emotion Detection for Spanish based on Explainable Linguistic Features and Transformers
+This project contains the source-code of the runs submitted by the UMUTeam at https://competitions.codalab.org/competitions/28682
+
+## Abstract
+Emotion Analysis extends the idea of Sentiment Analysis by shifting from plain positive or negative subjective polarities to a rich variety of emotions to get better understanding of the users' thoughts and appraisals. The gap between Sentiment Analysis to Emotion Analysis requires, however, better feature engineering techniques when it comes to capturing complex language phenomena, which have to do with figurative language and the way of expressing oneself. In this manuscript we detail our participation in the EmoEvalEs shared task from IberLEF 2021 regarding the identification of emotions in Spanish. Our proposal is grounded on the combination of explainable linguistic features and state-of-the-art transformers based on the Spanish version of BERT called BETO. We achieved 7th position on the official leader board with an accuracy of 68.5990\%, only 4.1667\% below the best result. We apply model agnostic techniques for explainable artificial intelligence to achieve insights from the linguistic features. This process suggests a correlation between psycho-linguistic processes and perceptual feel with the emotions evaluated and, specifically, with sadness feelings.
+
+
+## Details
+The source code is stored in the ```code``` folder. In the ```embeddings```folders there are symbolyc links to the pretrained word embeddings used. Due to size, you should download the ```glove.6b.300d.txt``` (https://nlp.stanford.edu/projects/glove/). The ```train```, ```dev```, and ```test``` splits are stored in the ```datasets``` folder. In the ```assets``` folders there are the features employed, the runs sent, and the hyperparameters results but not the models due to their filesize. You need to train the models or you can request me by email <joseantonio.garcia8@um.es>
